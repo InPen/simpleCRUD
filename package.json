@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/InPen/simpleCRUD/issues"
   },
-  "homepage": "https://github.com/InPen/simpleCRUD#readme"
+  "homepage": "https://github.com/InPen/simpleCRUD#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
