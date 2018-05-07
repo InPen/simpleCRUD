@@ -1,5 +1,8 @@
-const express = require('express');
-const app = express();
+const express = require('express')
+const bodyParser= require('body-parser')
+const app = express()
+
+app.use(bodyParser.urlencoded({extended: true}))
 
 // create a server where browsers can connect to.
 // We can do so with the help of a listen method
