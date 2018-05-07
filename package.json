@@ -23,9 +23,3 @@
     "nodemon": "^1.17.4"
   }
 }
-/* script key to execute nodemon */
-{
-  "scripts": {
-    "dev": "nodemon server.js"
-  }
-}
