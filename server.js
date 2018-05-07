@@ -9,20 +9,26 @@ app.use(bodyParser.urlencoded({extended: true}))
 // Install mongodb and require it on server
 
 const MongoClient = require('mongodb').MongoClient
+// variable to allow us to use the database when we handle requests from the browser
+var db
 
-MongoClient.connect('mongodb://<dbuser>:<dbpassword>@ds217360.mlab.com:17360/simplecrud', (err, database) => {
-  // ... start the server
+MongoClient.connect('mongodb://johann:johann@ds217360.mlab.com:17360/simplecrud', (err, client) => {
+  if (err) return console.log(err, 'you fucked up')
+  db = client.db('harry-potter-quotes') // whatever your database name is
+  app.listen(3000, () => {
+    console.log('listening on 3000')
+  })
 })
 
 // create a server where browsers can connect to.
 // We can do so with the help of a listen method
 // provided by Express:
-app.listen(3000, function() {
-  console.log('listening on 3000')
-})
-// console.log('May the Node odds be ever in thy favor')
+// app.listen(3000, function() {
+//   console.log('listening on 3000')
+// })
+// port above becomes obsolete after 'mongo.connect' has been installed
 
-// Routes:
+// *Routes*:
 
 // GET || READ
 
