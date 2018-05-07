@@ -2,7 +2,17 @@ const express = require('express')
 const bodyParser= require('body-parser')
 const app = express()
 
+// 'urlencoded' method tells body-parser to extract data from the <form> element
+// and add them to the body property in the request object.
 app.use(bodyParser.urlencoded({extended: true}))
+
+// Install mongodb and require it on server
+
+const MongoClient = require('mongodb').MongoClient
+
+MongoClient.connect('mongodb://<dbuser>:<dbpassword>@ds217360.mlab.com:17360/simplecrud', (err, database) => {
+  // ... start the server
+})
 
 // create a server where browsers can connect to.
 // We can do so with the help of a listen method
@@ -33,5 +43,5 @@ app.get('/', (req, res) => {
 // CREATE || POST
 
 app.post('/quotes', (req, res) => {
-  console.log('Hellooooooooooooooooo!')
+  console.log(req.body)
 })
