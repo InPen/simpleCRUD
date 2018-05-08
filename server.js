@@ -14,7 +14,7 @@ var db
 
 MongoClient.connect('mongodb://johann:johann@ds217360.mlab.com:17360/simplecrud', (err, client) => {
   if (err) return console.log(err, 'you fucked up')
-  db = client.db('harry-potter-quotes') // whatever your database name is
+  db = client.db('simplecrud') // whatever your database name is
   app.listen(3000, () => {
     console.log('listening on 3000')
   })
