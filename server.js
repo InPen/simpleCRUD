@@ -56,3 +56,10 @@ app.post('/quotes', (req, res) => {
     res.redirect('/')
   })
 })
+
+// READ || GET
+
+app.get('/', (req, res) => {
+  var cursor = db.collection('quotes').find()
+  console.log(cursor)
+})
