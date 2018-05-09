@@ -5,10 +5,10 @@ Learning Express syntax and challeging my Mongo skills by following
 
 ## Installation
 
-1.Clone repo
-2.run `npm install`
+1. Clone repo
+2. Run `npm install`
 
 ## Usage
 
-1.run `node server.js`
-2.Navigate to `localhost:3000`
+1. Run `node server.js`
+2. Navigate to `localhost:3000`
