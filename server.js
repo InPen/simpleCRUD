@@ -63,8 +63,11 @@ app.post('/quotes', (req, res) => {
 // READ || GET
 
 app.get('/', (req, res) => {
-  let love = db.collection('quotes').find().toArray(function(err, results) {
-  console.log(results)
+  db.collection('quotes').find().toArray((err, result) => {
   // send HTML file populated with quotes here
+  console.log(results)
+  if (err) return console.log(err)
+  // display data on the DOM as ejs
+  res.render('index.ejs', {quotes: result})
   })
 })
