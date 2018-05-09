@@ -2,6 +2,9 @@ const express = require('express')
 const bodyParser= require('body-parser')
 const app = express()
 
+// template engine that renders our data on the DOM
+app.set('view engine', 'ejs')
+
 // 'urlencoded' method tells body-parser to extract data from the <form> element
 // and add them to the body property in the request object.
 app.use(bodyParser.urlencoded({extended: true}))
@@ -60,6 +63,8 @@ app.post('/quotes', (req, res) => {
 // READ || GET
 
 app.get('/', (req, res) => {
-  var cursor = db.collection('quotes').find()
-  console.log(cursor)
+  let love = db.collection('quotes').find().toArray(function(err, results) {
+  console.log(results)
+  // send HTML file populated with quotes here
+  })
 })
