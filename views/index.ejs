@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="/styles/main.css" rel="stylesheet" type="text/css">
   <meta charset="UTF-8">
-  <title>MY APP</title>
+  <title>L O V E</title>
 </head>
 <body>
-  May Node and Express be ever in thy favor.
+<h3>You are loved</h3>
 
+<!-- generate quotes -->
+  <form action="/quotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+
+<!-- quotes being displayed from database -->
   <ul class="quotes">
   <% for(var i=0; i<quotes.length; i++) {%>
     <li class="quote">
@@ -16,10 +25,5 @@
   <% } %>
   </ul>
 
-  <form action="/quotes" method="POST">
-    <input type="text" placeholder="name" name="name">
-    <input type="text" placeholder="quote" name="quote">
-    <button type="submit">Submit</button>
-  </form>
 </body>
 </html>
